@@ -20,7 +20,8 @@ jobs:
       - name: Deploy ARM Template
         uses: azure/arm-deploy@v1
         with:
-          scope: /subscriptions/${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}/resourceGroups/CloudresumeX_Re_Grp
+          scope: resourcegroup
+          resourceGroupName: CloudResumeRG
           template: ./storage/azuredeploy.json
           parameters: ./storage/azuredeploy.parameters.json
           deploymentName: cloudresumex-deployment
