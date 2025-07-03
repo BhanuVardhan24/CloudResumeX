@@ -1,4 +1,4 @@
-name: Deploy static resume using Azure Login
+name: Deploy static resume to Azure Web App
 
 on:
   push:
@@ -7,27 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write
-      contents: read
-
     steps:
-      - name: Checkout code
+      - name: Checkout source code
         uses: actions/checkout@v4
-
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7DACB9BCB4064375A275C382B31DE6BD }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2165F19F1A6845F2825AD3E72D114108 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_53438617D7584D409E39E72A784170E8 }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: cloudresumex-bhanuvardhan
-          slot-name: production
-          package: ./web
+          slot-name: Production
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          package: .
