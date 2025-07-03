@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "storageAccountName": {
-      "value": "cloudresumex123"
+      "value": "cloudresumexstorageacc1"
     },
     "location": {
       "value": "centralindia"
