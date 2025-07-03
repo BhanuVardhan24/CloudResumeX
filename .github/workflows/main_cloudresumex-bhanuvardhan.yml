@@ -11,13 +11,22 @@ on:
   workflow_dispatch:
 
 jobs:
+<<<<<<< HEAD
   build:
+=======
+  deploy:
+>>>>>>> 8ea7847 (changed html file)
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
 
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v4
+=======
+      - name: Checkout code
+        uses: actions/checkout@v4
+>>>>>>> 8ea7847 (changed html file)
 
       - name: Set up Python version
         uses: actions/setup-python@v5
