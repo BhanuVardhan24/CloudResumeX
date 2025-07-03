@@ -28,13 +28,5 @@ It is part of **Project A: CloudResumeX**, focused on learning and practicing re
 
 ---
 
-## 📁 Project Structure
 
-.
-├── app.py # Flask app that serves index.html
-├── index.html # Your resume (static HTML)
-├── requirements.txt # Dependencies (Flask + gunicorn)
-└── .github/
-└── workflows/
-└── deploy.yml # GitHub Actions CI/CD pipeline
 
